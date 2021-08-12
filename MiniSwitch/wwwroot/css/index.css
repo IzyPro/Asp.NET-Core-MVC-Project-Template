@@ -1,0 +1,37 @@
+﻿:root {
+    --secondaryColor: #384BFF;
+    --primaryColor: #ffffff;
+    --accentColor: #EBF5FF;
+    --accentAshColor: #C4C4C4;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+.jumboText{
+    color: var(--secondaryColor);
+    font-weight: 900;
+}
+.jumbo {
+    background-image: url('../assets/img/jumboBG.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding-right: 5%;
+    padding-left: 5%;
+}
+
+.about {
+    background-image: url('../assets/img/jumboBG.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding-left: 15%;
+    padding-right: 1%;
+}
+
+.heading {
+    color: var(--secondaryColor);
+}
+
+.follow{
+    font-weight: 300;
+}

@@ -1,0 +1,48 @@
+﻿:root {
+    --secondaryColor: #384BFF;
+    --primaryColor: #ffffff;
+    --accentColor: #EBF5FF;
+    --accentAshColor: #C4C4C4;
+}
+
+body {
+}
+
+a{
+    color: var(--secondaryColor);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--secondaryColor);
+    text-decoration: none;
+}
+
+button {
+    background-color: var(--primaryColor);
+    border: 1px solid;
+    border-color: var(--secondaryColor);
+    color: var(--secondaryColor);
+    font-weight: 400;
+    width: 100%;
+}
+
+button:hover {
+    background-color: var(--secondaryColor);
+    border: none;
+    color: var(--primaryColor);
+    font-weight: 600;
+    width: 100%;
+}
+
+.centerize {
+    background-image: url('../assets/img/jumboBG.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding-top: 15%;
+    padding-bottom: 15%;
+}
+
+.details{
+    color: var(--accentAshColor);
+}

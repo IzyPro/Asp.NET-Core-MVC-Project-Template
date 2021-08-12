@@ -1,0 +1,142 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+<link rel="stylesheet" href="~/css/user.css" />
+
+<div class="container">
+    <h2 class="text-center heading mb-5">MiniSwitchs</h2>
+    <form asp-route-startDate="startDate" asp-route-endDate="endDate" asp-route-globalSearch="globalSearch" asp-controller="Request" asp-action="RequestManagement" method="post">
+        <div class="row mb-3">
+            <div class="col-md-4 mb-2">
+                <label class="text-muted m-0 p-0">Start Date</label>
+                <input type="date" name="startDate" id="startDate" class="form-control" placeholder="Start date (dd/mm/yyyy)" />
+            </div>
+            <div class="col-md-4 mb-2">
+                <label class="text-muted mb-0 p-0">End Date</label>
+                <input type="date" name="endDate" id="endDate" class="form-control" placeholder="End date (dd/mm/yyyy)" />
+            </div>
+            <div class="pt-2 m-auto">
+                <button onclick="filterRequests" class="btn btn-primary mt-2 m-auto"><i class="fa fa-search"></i> Filter</button>
+            </div>
+        </div>
+    </form>
+
+
+    <!-- BEGIN card -->
+    <div class="card">
+        <!-- BEGIN card-body -->
+        <div class="card-body">
+
+            <div class="table-responsive p-0 m-0">
+                <table id="tblCustomers">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>User</th>
+                            <th>Plan</th>
+                            <th>Status</th>
+                            <th>Invoice Number</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <div class="text-center mt-3">
+                @Html.Raw(ViewBag.Status)
+            </div>
+        </div>
+        <!-- END card-body -->
+    </div>
+    <!-- END card -->
+</div>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<link href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">$(function () {
+        $.ajax({
+            type: "GET",
+            url: '@Url.Action("RequestData", "Request")',
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: OnSuccess,
+            failure: function (response) {
+                alert(response.d);
+            },
+            error: function (response) {
+                alert(response.d);
+            }
+        });
+    });
+    function OnSuccess(response) {
+        $("#tblCustomers").DataTable(
+            {
+                bLengthChange: true,
+                lengthMenu: [[10, 20, 50, -1], [10, 20, 50, "All"]],
+                bFilter: true,
+                bSort: true,
+                bPaginate: true,
+                order: [[0, "desc"]],
+                data: response,
+                columns: [
+                    {
+                        data: 'createdDate',
+                        render: function (data, type) {
+                            var date = new Date(data);
+
+                            var month = date.getMonth() + 1  // 10 (PS: +1 since Month is 0-based)
+                            var day = date.getDate()       // 30
+                            var year = date.getFullYear()   // 2020
+
+                            return year + '/' + month + '/' + day;
+                        }
+                    },
+                    {
+                        data: 'customer',
+                        render: function (data, type) {
+                            return data.firstName + " " + data.lastName;
+                        }
+                    },
+                    {
+                        data: 'customer.phoneNumber',
+                    },
+                    {
+                        data: 'deliveryStatus',
+                        render: function (data, type) {
+                            @*var status = "";
+                            switch (data) {
+                                case 1:
+                                    status = 'Pending';
+                                    break;
+                                case 2:
+                                    status = 'AwaitingPickup';
+                                    break;
+                                case 3:
+                                    status = 'PickedUp';
+                                    break;
+                                case 4:
+                                    status = 'Delivered';
+                                    break;
+                                case 5:
+                                    status = 'Failed';
+                                    break;
+                            }
+                            return '<p class="' + status + '">' + status + '</p>';*@
+                            return '<p class="' + data + '">' + data + '</p>';
+                        }
+                    },
+                    {
+                        data: "invoiceNumber"
+                    },
+                    {
+                        data: "id",
+                        render: function (data, type) {
+                            return '<a href="./Details/?itemID=' + data + '">View More</a>';
+                        }
+                    }
+                ],
+            });
+    };</script>

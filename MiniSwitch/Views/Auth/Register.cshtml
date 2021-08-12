@@ -1,0 +1,41 @@
+﻿@model MiniSwitch.ViewModels.RegisterUserViewModel
+@{
+    Layout = "~/Views/Shared/_AuthLayout.cshtml";
+    ViewData["Title"] = "Log in";
+}
+
+<link rel="stylesheet" href="~/css/auth.css" />
+
+<div class="centerize">
+    <div class="m-auto text-center col-md-8 my-auto">
+        <h1>Register</h1>
+        <p>Enter your details</p>
+        <p class="text-danger">@ViewBag.ErrorMsg</p>
+        <form asp-controller="Auth" asp-action="Register" method="post">
+            <div class="row">
+                <input class="form-control m-2 col-md-5" asp-for="Firstname" type="text" placeholder="Firstname" required />
+                <input class="form-control m-2 col-md-5" asp-for="Lastname" type="text" placeholder="Lastname" required />
+                <input class="form-control m-2 col-md-5" asp-for="Email" type="email" placeholder="Email Address" required />
+                <input class="form-control m-2 col-md-5" asp-for="PhoneNumber" type="tel" placeholder="Phone Number" required />
+
+                <input class="form-control m-2 col-md-5 mt-3" asp-for="Country" type="text" placeholder="Country" required />
+                <div class="text-left m-2">
+                    <b>Gender: </b><br />
+                    @foreach (var gender in System.Enum.GetValues(typeof(MiniSwitch.Enums.GenderEnum)))
+                    {
+                        <label class="m-1" asp-for="Gender">@gender</label>
+                        <input class="m-1" type="radio" asp-for="Gender" value="@((int)gender)" />
+                    }
+                </div>
+
+
+                <br /><br />
+
+                <input class="form-control m-2 col-md-5" asp-for="Password" type="password" placeholder="Password" required />
+                <input class="form-control m-2 col-md-5" asp-for="ConfirmPassword" type="password" placeholder="Confirm Password" required />
+            </div>
+            <button class="btn-lg m-2 mt-3" type="submit">Register</button>
+            <p>Already have an account? <a asp-action="Login">Log in</a></p>
+        </form>
+    </div>
+</div>

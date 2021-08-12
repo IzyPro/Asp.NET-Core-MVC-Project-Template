@@ -1,0 +1,14 @@
+﻿:root {
+    --secondaryColor: #384BFF;
+    --primaryColor: #ffffff;
+    --accentColor: #EBF5FF;
+    --accentAshColor: #C4C4C4;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+.card {
+    background-color: #ebeef4;
+}
