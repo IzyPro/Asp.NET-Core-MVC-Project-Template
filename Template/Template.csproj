@@ -1,0 +1,314 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Hangfire.AspNetCore" Version="1.7.24" />
+    <PackageReference Include="Hangfire.Core" Version="1.7.24" />
+    <PackageReference Include="Hangfire.MemoryStorage" Version="1.7.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.17" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.8">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.8">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="MimeKit" Version="2.13.0" />
+    <PackageReference Include="MySql.EntityFrameworkCore" Version="3.1.12.1" />
+    <PackageReference Include="NETCore.MailKit" Version="2.0.3" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\">
+    </Folder>
+    <Folder Include="ViewModels\">
+    </Folder>
+    <Folder Include="DTOs\">
+    </Folder>
+    <Folder Include="Helpers\">
+    </Folder>
+    <Folder Include="Views\Auth\">
+    </Folder>
+    <Folder Include="Views\User\">
+    </Folder>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\css\plugins\%40fullcalendar\bootstrap\main.min.css" />
+    <Content Remove="wwwroot\css\plugins\%40fullcalendar\core\locales\kk.js" />
+    <Content Remove="wwwroot\css\plugins\%40fullcalendar\core\locales\ko.js" />
+    <Content Remove="wwwroot\css\plugins\%40fullcalendar\core\locales\lb.js" />
+    <Content Remove="wwwroot\css\plugins\%40fullcalendar\core\locales\lt.js" />
+    <Content Remove="wwwroot\css\plugins\%40fullcalendar\core\locales\lv.js" />
+    <Content Remove="wwwroot\css\plugins\%40fullcalendar\core\locales\mk.js" />
+    <Content Remove="wwwroot\css\plugins\%40fullcalendar\core\locales\ms.js" />
+    <Content Remove="wwwroot\css\plugins\%40fullcalendar\core\locales\nb.js" />
+    <Content Remove="wwwroot\css\plugins\%40fullcalendar\core\locales\nl.js" />
+    <Content Remove="wwwroot\css\plugins\%40fullcalendar\core\locales\nn.js" />
+    <Content Remove="wwwroot\css\plugins\%40fullcalendar\core\locales\pl.js" />
+    <Content Remove="wwwroot\css\plugins\%40fullcalendar\core\locales\pt.js" />
+    <Content Remove="wwwroot\css\plugins\%40fullcalendar\daygrid\main.min.js" />
+    <Content Remove="wwwroot\css\plugins\%40fullcalendar\daygrid\package.json" />
+    <Content Remove="wwwroot\css\plugins\%40fullcalendar\daygrid\README.md" />
+    <Content Remove="wwwroot\css\plugins\%40fullcalendar\interaction\LICENSE.txt" />
+    <Content Remove="wwwroot\css\plugins\%40fullcalendar\interaction\main.d.ts" />
+    <Content Remove="wwwroot\css\plugins\%40fullcalendar\interaction\main.esm.js" />
+    <Content Remove="wwwroot\css\plugins\apexcharts\dist\locales\ca.json" />
+    <Content Remove="wwwroot\css\plugins\apexcharts\dist\locales\cs.json" />
+    <Content Remove="wwwroot\css\plugins\apexcharts\dist\locales\de.json" />
+    <Content Remove="wwwroot\css\plugins\apexcharts\dist\locales\el.json" />
+    <Content Remove="wwwroot\css\plugins\apexcharts\dist\locales\en.json" />
+    <Content Remove="wwwroot\css\plugins\apexcharts\dist\locales\es.json" />
+    <Content Remove="wwwroot\css\plugins\apexcharts\dist\locales\fi.json" />
+    <Content Remove="wwwroot\css\plugins\apexcharts\dist\locales\fr.json" />
+    <Content Remove="wwwroot\css\plugins\apexcharts\dist\locales\he.json" />
+    <Content Remove="wwwroot\css\plugins\apexcharts\dist\locales\hi.json" />
+    <Content Remove="wwwroot\css\plugins\apexcharts\dist\locales\hr.json" />
+    <Content Remove="wwwroot\css\plugins\apexcharts\dist\locales\hy.json" />
+    <Content Remove="wwwroot\css\plugins\apexcharts\dist\locales\id.json" />
+    <Content Remove="wwwroot\css\plugins\apexcharts\src\modules\Core.js" />
+    <Content Remove="wwwroot\css\plugins\apexcharts\src\modules\CoreUtils.js" />
+    <Content Remove="wwwroot\css\plugins\apexcharts\src\modules\Crosshairs.js" />
+    <Content Remove="wwwroot\css\plugins\apexcharts\src\modules\Data.js" />
+    <Content Remove="wwwroot\css\plugins\apexcharts\src\modules\DataLabels.js" />
+    <Content Remove="wwwroot\css\plugins\apexcharts\src\modules\dimensions\Dimensions.js" />
+    <Content Remove="wwwroot\css\plugins\apexcharts\src\modules\dimensions\Grid.js" />
+    <Content Remove="wwwroot\css\plugins\apexcharts\src\modules\dimensions\Helpers.js" />
+    <Content Remove="wwwroot\css\plugins\apexcharts\src\modules\dimensions\XAxis.js" />
+    <Content Remove="wwwroot\css\plugins\apexcharts\src\modules\dimensions\YAxis.js" />
+    <Content Remove="wwwroot\css\plugins\apexcharts\src\modules\Events.js" />
+    <Content Remove="wwwroot\css\plugins\apexcharts\src\modules\Exports.js" />
+    <Content Remove="wwwroot\css\plugins\apexcharts\src\modules\Fill.js" />
+    <Content Remove="wwwroot\css\plugins\apexcharts\src\modules\Filters.js" />
+    <Content Remove="wwwroot\css\plugins\apexcharts\src\modules\Formatters.js" />
+    <Content Remove="wwwroot\css\plugins\apexcharts\src\modules\Graphics.js" />
+    <Content Remove="wwwroot\css\plugins\apexcharts\src\modules\helpers\Destroy.js" />
+    <Content Remove="wwwroot\css\plugins\blueimp-load-image\js\load-image.js" />
+    <Content Remove="wwwroot\css\plugins\blueimp-load-image\js\load-image-exif.js" />
+    <Content Remove="wwwroot\css\plugins\blueimp-load-image\js\load-image-exif-map.js" />
+    <Content Remove="wwwroot\css\plugins\blueimp-load-image\js\load-image-fetch.js" />
+    <Content Remove="wwwroot\css\plugins\blueimp-load-image\js\load-image-iptc.js" />
+    <Content Remove="wwwroot\css\plugins\blueimp-load-image\js\load-image-iptc-map.js" />
+    <Content Remove="wwwroot\css\plugins\blueimp-load-image\js\load-image-meta.js" />
+    <Content Remove="wwwroot\css\plugins\blueimp-load-image\js\load-image-orientation.js" />
+    <Content Remove="wwwroot\css\plugins\blueimp-load-image\js\load-image-scale.js" />
+    <Content Remove="wwwroot\css\plugins\blueimp-load-image\LICENSE.txt" />
+    <Content Remove="wwwroot\css\plugins\blueimp-load-image\package.json" />
+    <Content Remove="wwwroot\css\plugins\blueimp-load-image\README.md" />
+    <Content Remove="wwwroot\css\plugins\blueimp-tmpl\js\compile.js" />
+    <Content Remove="wwwroot\css\plugins\blueimp-tmpl\js\runtime.js" />
+    <Content Remove="wwwroot\css\plugins\blueimp-tmpl\js\tmpl.js" />
+    <Content Remove="wwwroot\css\plugins\blueimp-tmpl\js\tmpl.min.js" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-datepicker\dist\locales\bootstrap-datepicker.bs.min.js" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-datepicker\dist\locales\bootstrap-datepicker.ca.min.js" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-datepicker\dist\locales\bootstrap-datepicker.cs.min.js" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-datepicker\dist\locales\bootstrap-datepicker.cy.min.js" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-datepicker\dist\locales\bootstrap-datepicker.da.min.js" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-datepicker\dist\locales\bootstrap-datepicker.de.min.js" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-datepicker\dist\locales\bootstrap-datepicker.el.min.js" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-datepicker\dist\locales\bootstrap-datepicker.en-AU.min.js" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-datepicker\dist\locales\bootstrap-datepicker.en-CA.min.js" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-datepicker\dist\locales\bootstrap-datepicker.en-GB.min.js" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-datepicker\dist\locales\bootstrap-datepicker.en-IE.min.js" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-datepicker\dist\locales\bootstrap-datepicker.en-NZ.min.js" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-datepicker\dist\locales\bootstrap-datepicker.en-ZA.min.js" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-datepicker\dist\locales\bootstrap-datepicker.eo.min.js" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-datepicker\dist\locales\bootstrap-datepicker.es.min.js" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-datepicker\dist\locales\bootstrap-datepicker.et.min.js" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-datepicker\dist\locales\bootstrap-datepicker.eu.min.js" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-datepicker\dist\locales\bootstrap-datepicker.fa.min.js" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-daterangepicker\daterangepicker.js" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-daterangepicker\demo.html" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-daterangepicker\drp.png" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-daterangepicker\example\amd\index.html" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-daterangepicker\example\amd\main.js" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-daterangepicker\example\amd\require.js" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-daterangepicker\example\browserify\bundle.js" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-daterangepicker\example\browserify\index.html" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-daterangepicker\example\browserify\main.js" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-daterangepicker\example\browserify\README.md" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-daterangepicker\index.html" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-daterangepicker\moment.min.js" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-daterangepicker\package.js" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-daterangepicker\package.json" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-daterangepicker\README.md" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-daterangepicker\test.html" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-daterangepicker\website\index.html" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-daterangepicker\website\website.css" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-daterangepicker\website\website.js" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-daterangepicker\website.css" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-daterangepicker\website.js" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-select\bower.json" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-select\CHANGELOG.md" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-select\composer.json" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-select\CONTRIBUTING.md" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-select\dist\css\bootstrap-select.css" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-select\dist\css\bootstrap-select.css.map" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-select\dist\js\i18n\defaults-hu_HU.min.js" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-select\dist\js\i18n\defaults-id_ID.js" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-select\dist\js\i18n\defaults-id_ID.js.map" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-select\dist\js\i18n\defaults-id_ID.min.js" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-select\dist\js\i18n\defaults-it_IT.js" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-select\dist\js\i18n\defaults-it_IT.js.map" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-select\dist\js\i18n\defaults-vi_VN.js" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-select\dist\js\i18n\defaults-vi_VN.js.map" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-select\dist\js\i18n\defaults-vi_VN.min.js" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-select\dist\js\i18n\defaults-zh_CN.js" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-select\dist\js\i18n\defaults-zh_CN.js.map" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-select\docs\docs\dist\js\i18n\defaults-ko_KR.js" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-select\docs\docs\dist\js\i18n\defaults-ko_KR.js.map" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-select\docs\docs\dist\js\i18n\defaults-ko_KR.min.js" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-select\docs\docs\dist\js\i18n\defaults-lt_LT.js" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-select\docs\docs\dist\js\i18n\defaults-lt_LT.js.map" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-select\docs\docs\dist\js\i18n\defaults-lt_LT.min.js" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-slider\test\specs\TickMarksSpec.js" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-slider\test\specs\TooltipMouseOverOptionSpec.js" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-slider\test\specs\TooltipPositionOptionSpec.js" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-slider\test\specs\TooltipSplitOptionSpec.js" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-slider\test\specs\TouchCapableSpec.js" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-slider\tpl\index.tpl" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-slider\tpl\SpecRunner.tpl" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-table\bootstrap-table.jquery.json" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-table\bower.json" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-table\CHANGELOG.md" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-table\composer.json" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-table\dist\bootstrap-table.css" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-table\dist\bootstrap-table.js" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-table\dist\bootstrap-table.min.css" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-table\dist\bootstrap-table.min.js" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-table\dist\bootstrap-table-locale-all.js" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-table\dist\bootstrap-table-locale-all.min.js" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-table\dist\themes\foundation\bootstrap-table-foundation.css" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-table\dist\themes\foundation\bootstrap-table-foundation.js" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-table\dist\themes\semantic\bootstrap-table-semantic.css" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-table\dist\themes\semantic\bootstrap-table-semantic.js" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-table\dist\themes\semantic\bootstrap-table-semantic.min.css" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-table\dist\themes\semantic\bootstrap-table-semantic.min.js" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-table\FUNDING.yml" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-table\index.d.ts" />
+    <Content Remove="wwwroot\css\plugins\bootstrap-table\LICENSE" />
+    <Content Remove="wwwroot\css\plugins\datatables.net-responsive-bs4\js\responsive.bootstrap4.js" />
+    <Content Remove="wwwroot\css\plugins\datatables.net-responsive-bs4\js\responsive.bootstrap4.min.js" />
+    <Content Remove="wwwroot\css\plugins\datatables.net-responsive-bs4\package.json" />
+    <Content Remove="wwwroot\css\plugins\datatables.net-responsive-bs4\Readme.md" />
+    <Content Remove="wwwroot\css\plugins\datatables.net-rowgroup\js\dataTables.rowGroup.js" />
+    <Content Remove="wwwroot\css\plugins\datatables.net-rowgroup\js\dataTables.rowGroup.min.js" />
+    <Content Remove="wwwroot\css\plugins\datatables.net-rowgroup\package.json" />
+    <Content Remove="wwwroot\css\plugins\datatables.net-rowgroup\Readme.md" />
+    <Content Remove="wwwroot\css\plugins\datatables.net-rowgroup-bs4\css\rowGroup.bootstrap4.css" />
+    <Content Remove="wwwroot\css\plugins\datatables.net-rowgroup-bs4\css\rowGroup.bootstrap4.min.css" />
+    <Content Remove="wwwroot\css\plugins\datatables.net-rowgroup-bs4\js\rowGroup.bootstrap4.js" />
+    <Content Remove="wwwroot\css\plugins\datatables.net-rowgroup-bs4\js\rowGroup.bootstrap4.min.js" />
+    <Content Remove="wwwroot\css\plugins\datatables.net-rowgroup-bs4\package.json" />
+    <Content Remove="wwwroot\css\plugins\datatables.net-rowgroup-bs4\Readme.md" />
+    <Content Remove="wwwroot\css\plugins\moment\dist\locale\tlh.js" />
+    <Content Remove="wwwroot\css\plugins\moment\dist\locale\tl-ph.js" />
+    <Content Remove="wwwroot\css\plugins\moment\dist\locale\tr.js" />
+    <Content Remove="wwwroot\css\plugins\moment\dist\locale\tzl.js" />
+    <Content Remove="wwwroot\css\plugins\moment\dist\locale\tzm.js" />
+    <Content Remove="wwwroot\css\plugins\moment\dist\locale\tzm-latn.js" />
+    <Content Remove="wwwroot\css\plugins\moment\dist\locale\ug-cn.js" />
+    <Content Remove="wwwroot\css\plugins\moment\dist\locale\uk.js" />
+    <Content Remove="wwwroot\css\plugins\moment\dist\locale\ur.js" />
+    <Content Remove="wwwroot\css\plugins\moment\dist\locale\uz.js" />
+    <Content Remove="wwwroot\css\plugins\moment\dist\locale\uz-latn.js" />
+    <Content Remove="wwwroot\css\plugins\moment\dist\locale\vi.js" />
+    <Content Remove="wwwroot\css\plugins\moment\dist\locale\x-pseudo.js" />
+    <Content Remove="wwwroot\css\plugins\moment\dist\locale\yo.js" />
+    <Content Remove="wwwroot\css\plugins\moment\dist\locale\zh-cn.js" />
+    <Content Remove="wwwroot\css\plugins\moment\dist\locale\zh-hk.js" />
+    <Content Remove="wwwroot\css\plugins\moment\dist\locale\zh-mo.js" />
+    <Content Remove="wwwroot\css\plugins\moment\dist\locale\zh-tw.js" />
+    <Content Remove="wwwroot\css\plugins\moment\dist\moment.js" />
+    <Content Remove="wwwroot\css\plugins\moment\ender.js" />
+    <Content Remove="wwwroot\css\plugins\moment\LICENSE" />
+    <Content Remove="wwwroot\css\plugins\moment\locale\af.js" />
+    <Content Remove="wwwroot\css\plugins\moment\locale\ar.js" />
+    <Content Remove="wwwroot\css\plugins\moment\locale\ar-dz.js" />
+    <Content Remove="wwwroot\css\plugins\moment\locale\ar-kw.js" />
+    <Content Remove="wwwroot\css\plugins\moment\locale\ar-ly.js" />
+    <Content Remove="wwwroot\css\plugins\moment\locale\ar-ma.js" />
+    <Content Remove="wwwroot\css\plugins\moment\locale\ar-sa.js" />
+    <Content Remove="wwwroot\css\plugins\moment\locale\ar-tn.js" />
+    <Content Remove="wwwroot\css\plugins\moment\locale\az.js" />
+    <Content Remove="wwwroot\css\plugins\moment\locale\be.js" />
+    <Content Remove="wwwroot\css\plugins\moment\locale\bg.js" />
+    <Content Remove="wwwroot\css\plugins\moment\locale\bm.js" />
+    <Content Remove="wwwroot\css\plugins\moment\locale\bn.js" />
+    <Content Remove="wwwroot\css\plugins\moment\locale\bo.js" />
+    <Content Remove="wwwroot\css\plugins\moment\locale\br.js" />
+    <Content Remove="wwwroot\css\plugins\pwstrength-bootstrap\locales\pt.json" />
+    <Content Remove="wwwroot\css\plugins\pwstrength-bootstrap\locales\ru.json" />
+    <Content Remove="wwwroot\css\plugins\pwstrength-bootstrap\locales\sk.json" />
+    <Content Remove="wwwroot\css\plugins\pwstrength-bootstrap\locales\th.json" />
+    <Content Remove="wwwroot\css\plugins\pwstrength-bootstrap\locales\tr.json" />
+    <Content Remove="wwwroot\css\plugins\pwstrength-bootstrap\locales\zh-TW.json" />
+    <Content Remove="wwwroot\css\plugins\pwstrength-bootstrap\MIT-LICENSE.txt" />
+    <Content Remove="wwwroot\css\plugins\pwstrength-bootstrap\OPTIONS.md" />
+    <Content Remove="wwwroot\css\plugins\pwstrength-bootstrap\package.json" />
+    <Content Remove="wwwroot\css\plugins\pwstrength-bootstrap\README.md" />
+    <Content Remove="wwwroot\css\plugins\pwstrength-bootstrap\spec\rules.spec.js" />
+    <Content Remove="wwwroot\css\plugins\pwstrength-bootstrap\src\i18n.js" />
+    <Content Remove="wwwroot\css\plugins\pwstrength-bootstrap\src\methods.js" />
+    <Content Remove="wwwroot\css\plugins\pwstrength-bootstrap\src\options.js" />
+    <Content Remove="wwwroot\css\plugins\pwstrength-bootstrap\src\rules.js" />
+    <Content Remove="wwwroot\css\plugins\pwstrength-bootstrap\src\ui.js" />
+    <Content Remove="wwwroot\css\plugins\pwstrength-bootstrap\src\ui.popover.js" />
+    <Content Remove="wwwroot\css\plugins\pwstrength-bootstrap\src\ui.progressbar.js" />
+    <Content Remove="wwwroot\css\plugins\summernote\config\build-fonts.js" />
+    <Content Remove="wwwroot\css\plugins\summernote\config\common\dev.common.config.js" />
+    <Content Remove="wwwroot\css\plugins\summernote\config\common\lang.config.js" />
+    <Content Remove="wwwroot\css\plugins\summernote\config\common\production.common.config.js" />
+    <Content Remove="wwwroot\css\plugins\summernote\config\common\scss.config.js" />
+    <Content Remove="wwwroot\css\plugins\summernote\config\webpack.config.dev.js" />
+    <Content Remove="wwwroot\css\plugins\summernote\config\webpack.config.production.js" />
+    <Content Remove="wwwroot\css\plugins\summernote\dist\font\summernote.eot" />
+    <Content Remove="wwwroot\css\plugins\summernote\dist\font\summernote.ttf" />
+    <Content Remove="wwwroot\css\plugins\summernote\dist\font\summernote.woff" />
+    <Content Remove="wwwroot\css\plugins\summernote\dist\font\summernote.woff2" />
+    <Content Remove="wwwroot\css\plugins\summernote\dist\lang\summernote-ar-AR.js" />
+    <Content Remove="wwwroot\css\plugins\summernote\dist\lang\summernote-ar-AR.min.js" />
+    <Content Remove="wwwroot\css\plugins\summernote\dist\lang\summernote-ar-AR.min.js.LICENSE.txt" />
+    <Content Remove="wwwroot\css\plugins\summernote\dist\lang\summernote-az-AZ.js" />
+    <Content Remove="wwwroot\css\plugins\summernote\dist\lang\summernote-az-AZ.min.js" />
+    <Content Remove="wwwroot\css\plugins\summernote\src\icons\special-character.svg" />
+    <Content Remove="wwwroot\css\plugins\summernote\src\icons\square.svg" />
+    <Content Remove="wwwroot\css\plugins\summernote\src\icons\strikethrough.svg" />
+    <Content Remove="wwwroot\css\plugins\summernote\src\icons\subscript.svg" />
+    <Content Remove="wwwroot\css\plugins\summernote\src\icons\summernote.svg" />
+    <Content Remove="wwwroot\css\plugins\summernote\src\icons\superscript.svg" />
+    <Content Remove="wwwroot\css\plugins\summernote\src\icons\table.svg" />
+    <Content Remove="wwwroot\css\plugins\summernote\src\icons\templates\summernote-icons.scss" />
+    <Content Remove="wwwroot\css\plugins\summernote\src\icons\text-height.svg" />
+    <Content Remove="wwwroot\css\plugins\summernote\src\icons\trash.svg" />
+    <Content Remove="wwwroot\css\plugins\summernote\src\icons\underline.svg" />
+    <Content Remove="wwwroot\css\plugins\summernote\src\icons\undo.svg" />
+    <Content Remove="wwwroot\css\plugins\summernote\src\icons\unorderedlist.svg" />
+    <Content Remove="wwwroot\css\plugins\summernote\src\icons\video.svg" />
+    <Content Remove="wwwroot\css\plugins\summernote\src\js\base\Context.js" />
+    <Content Remove="wwwroot\css\plugins\summernote\src\js\base\core\async.js" />
+    <Content Remove="wwwroot\css\plugins\summernote\src\js\base\core\dom.js" />
+    <Content Remove="wwwroot\css\plugins\summernote\src\js\base\core\env.js" />
+    <Content Remove="wwwroot\css\plugins\summernote\src\js\base\core\func.js" />
+    <Content Remove="wwwroot\css\plugins\summernote\src\js\base\core\key.js" />
+    <Content Remove="wwwroot\css\plugins\summernote\src\js\base\core\lists.js" />
+    <Content Remove="wwwroot\css\plugins\summernote\src\js\base\core\range.js" />
+    <Content Remove="wwwroot\css\plugins\summernote\src\js\base\editing\Bullet.js" />
+    <Content Remove="wwwroot\css\plugins\summernote\src\js\base\editing\History.js" />
+    <Content Remove="wwwroot\css\plugins\summernote\src\js\base\editing\Style.js" />
+    <Content Remove="wwwroot\css\plugins\summernote\src\js\base\editing\Table.js" />
+    <Content Remove="wwwroot\css\plugins\summernote\src\js\base\editing\Typing.js" />
+    <Content Remove="wwwroot\css\plugins\summernote\src\js\base\module\AirPopover.js" />
+    <Content Remove="wwwroot\css\plugins\summernote\src\js\base\module\AutoLink.js" />
+    <Content Remove="wwwroot\css\plugins\summernote\src\js\base\module\AutoReplace.js" />
+    <Content Remove="wwwroot\css\plugins\summernote\src\js\base\module\AutoSync.js" />
+    <Content Remove="wwwroot\css\plugins\summernote\src\js\base\module\Buttons.js" />
+    <Content Remove="wwwroot\css\plugins\summernote\src\js\base\module\Clipboard.js" />
+  </ItemGroup>
+</Project>
