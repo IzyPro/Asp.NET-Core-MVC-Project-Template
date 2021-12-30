@@ -151,7 +151,7 @@ namespace Template
 
 			app.UseEndpoints(endpoints =>
 			{
-				endpoints.MapControllerRoute("default", "{controller=User}/{action=Dashboard}");
+				endpoints.MapControllerRoute("default", "{controller=Auth}/{action=Login}");
 			});
 		}
 	}
